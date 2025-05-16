@@ -4,7 +4,7 @@ import numpy as np
 import joblib
 import os
 
-# ✅ يجب أن يكون هذا أول أمر بعد الاستيراد
+# ✅    هذا أول أمر بعد الايمبورت
 st.set_page_config(page_title="نموذج التمكين النفسي الرقمي", layout="centered")
 
 # ✅ تنسيق الواجهة (من اليمين لليسار + خطوط)
@@ -59,7 +59,7 @@ with st.form("prediction_form"):
         </style>
     """, unsafe_allow_html=True)
 
-    # المتغيرات منفصلة مع تسمية جميلة
+    # المتغيرات منفصلة مع تسميتها 
     st.markdown('<div class="slider-label">💪 الصمود الرقمي</div>', unsafe_allow_html=True)
     dr = st.slider(" ", min_value=1.0, max_value=5.0, step=0.1, key="dr", label_visibility="collapsed")
 
@@ -97,15 +97,12 @@ if submitted:
     st.markdown(f"<h2 style='color:{color};'>التمكين النفسي الرقمي المتوقع: {prediction_rounded} ({level})</h2>", unsafe_allow_html=True)
     st.progress(min(prediction / 5.0, 1.0))
 
-    st.markdown("### 🔍 تفاصيل الإدخال:")
-    st.dataframe(input_df.style.format(precision=2))
-
-# ✅ معلومات إضافية عن النموذج
+    # ✅ معلومات إضافية عن النموذج
 st.markdown("---")
 st.markdown("<h2 style='text-align: right;'>ℹ️ <b>عن النموذج</b></h2>", unsafe_allow_html=True)
 st.markdown(
     """
-    <div style='font-size:18px; text-align: right; font-weight: bold; line-height:1.8'>
+    <div style='font-size:19px; text-align: right; font-weight: bold; line-height:1.8'>
     طورت هذا النموذج/ سلوى سامي نسيم الباحثة بقسم علم النفس بكلية التربية - جامعة عين شمس، باستخدام خوارزميات تعلم الآلة القابلة للتفسير، وتم تدريبه على بيانات طلاب المرحلة الثانوية.<br><br>
     يعتمد النموذج على المدخلات التالية:<br>
     💪 الصمود الرقمي | 🎯 الذكاء الانفعالي الرقمي | 🤝 الدعم الاجتماعي
